@@ -8,11 +8,13 @@ public String decodeString(ArrayList<StringPart> parts){
 public ArrayList<StringPart> encodeString(String word){
   int i=0;
   ArrayList<StringPart> arr = new ArrayList<StringPart>();
-  while(i!=word.length()){
-    i=i+findPart(word).getLength();
-    arr.add(findPart(word));
+  StringPart a;
+  while(!i.equals(word.length())){
+    a=findPart(word);
+    i=i+a.getLength();
+    arr.add(a);
     if(i<word.length())
-       {word=word.substring(findPart(word).getStart(),(findPart(word).getStart()+findPart(word).getLength()));}
+       {word=word.substring(a.getStart()+a.getLength());}
   }
 }
     
